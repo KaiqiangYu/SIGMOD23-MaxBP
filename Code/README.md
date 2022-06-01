@@ -1,4 +1,4 @@
-# PVLDB22-MaxBP
+# SIGMOD23-MaxBP
 Our code, data and additional materials are avaliable here.
 ## Index  
 ```shell
@@ -12,7 +12,7 @@ Our code, data and additional materials are avaliable here.
 |  |   |- cities.g
 |  |   |- writer.g
 |  | ...
-|- 22-PVLDB-MaxBP-report.pdf (technical report)
+|- SIGMOD-MaxBP-report.pdf (technical report)
 ```
 
 
