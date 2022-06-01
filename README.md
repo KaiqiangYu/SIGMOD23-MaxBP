@@ -1,22 +1,50 @@
-# SIGMOD23-MaxBP
+# PVLDB22-MaxBP
 Our code, data and additional materials are avaliable here.
 ## Index  
 ```shell
 .
 |- README.md
 |- Code
-|  | - ...
-|
-|- SIGMOD_MaxBP_report.pdf (technical report)
+|  | - dataset
+|  |   |- Example.g
+|  |   |- divorce.g
+|  |   |- cfat.g
+|  |   |- cities.g
+|  |   |- writer.g
+|  | ...
+|- 22-PVLDB-MaxBP-report.pdf (technical report)
 ```
 
 
 # FastBB
 An efficient algorithm for finding the Maximum k-BiPlex (MaxBP).
 
+
+## Source code info
+Programming Language: `C++`
+ 
+Compiler Info: `gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0 ` OR `gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44)`
+
+Packages/Libraries Needed: `CMake 2.8`, `makefile`
+
+## Datasets info
+All datasets used in our experiments are from the [KONECT](http://konect.cc/networks/ "KONECT") website. We provided four small datasets, i.e., Divorce, Cfat, Cities, and Writer, in the folder "./code/dataset".
+
+
+
 ## Setup
+### Option 1 (without CMake)
 ```shell
-g++ main.cpp -O3 -o FastBB
+mkdir build
+cd build
+g++ ../main.cpp -O3 -o FastBB
+```
+### Option 2 (using CMake)
+```shell
+mkdir build
+cd build
+camke ..
+make
 ```
 
 ## Usage
@@ -32,6 +60,38 @@ g++ main.cpp -O3 -o FastBB
       -u[para theta_l] --u=[para theta_l] The threshold of number of vertices at left side
       -v[para theta_r] --v=[para theta_r] The threshold of number of vertices at right side
       -K[para K], --K=[para K]            Number of MaxBPs to be found
+
+
+## Running Example
+
+```shell
+> mkdir build
+> cd build
+> cmake ..
+> make
+>
+> ./FastBB -f "../dataset/Example.g" -k 1 -K 2
+Running Time: 0.001859 sec
+|E|: 87  |L|: 5  |R|: 18
+L: 4 0 5 2 1
+R: 40 34 37 25 26 21 11 23 33 16 35 9 18 41 10 46 13 28
+
+|E|: 87  |L|: 6  |R|: 15
+L: 6 0 1 4 2 5
+R: 34 35 16 11 33 23 21 40 9 26 10 25 28 13 37
+>
+> ./FastBB -f "../dataset/writer.g" -k 1 -K 2
+Running Time: 0.060531 sec
+|E|: 125  |L|: 32  |R|: 4
+L: 1683 3644 3972 4165 4255 4385 4591 4638 4667 4590 4675 4676 4678 4679 4680 2503 4682 2549 4691 5739 5764 5978 7058 8722 8747 9970 11840 2892 2897 3481 3621 22775
+R: 27542 27544 27543 27541
+
+|E|: 136  |L|: 34  |R|: 4
+L: 1616 1620 1621 1627 1629 2172 2332 3290 3864 4483 4775 1617 1619 13832 13975 14626 15570 15745 15832 17009 17036 19608 20875 21888 22121 22122 22483 22757 23021 23023 23035 23036 23037 23038
+R: 27472 27473 27474 27475
+>
+>
+```
 
 
 ## Input Graph Format
@@ -60,33 +120,14 @@ By default, FastBB returns the MaxBP and the corresponding running time.
     R: 4 5 6 7
 
 
+# Future work
+In the future, we shall try to further improve reproducibility of this work.
 
-## Running Example
+(1) Use ReproZip to simplify the reproducibility process.
 
-```shell
-> g++ main.cpp -O3 -o FastBB
->
-> ./FastBB -f "./Example.graph" -k 1 -u 3 -v 3 -K 2
-Running Time: 0ms
-|E|: 10  |L|: 4  |R|: 3
-L: 3 0 2 1
-R: 4 6 7
+(2) Rebuild the source code and provide the general frameworks, e.g., Sym-BK, PB, IE, PBIE, in the form of a library.
 
-|E|: 11  |L|: 3  |R|: 4
-L: 0 2 1
-R: 4 5 6 7
->
-> cat Example.graph
-8 4 13
-0 4 5 6 7
-1 4 5 6
-2 4 5 6 7
-3 6 7
-4 0 1 2
-5 0 1 2
-6 0 1 2 3
-7 0 2 3
+(3) Provide more datasets used in our experiments and the source code to collect and pre-process datasets from the [KONECT](http://konect.cc/networks/ "KONECT") website.
 
->
->
-```
+# Acknowledgment
+We thank reviewers of SIGMOD'23 for their valuable suggestions to help us improve reproducibility.
