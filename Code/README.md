@@ -94,6 +94,14 @@ R: 27472 27473 27474 27475
 ```
 
 
+## Output Format
+By default, FastBB returns the MaxBP and the corresponding running time.
+
+    Running Time: 1ms
+    |E|: 11  |L|: 3  |R|: 4
+    L: 0 2 1
+    R: 4 5 6 7
+
 ## Input Graph Format
 The input graph  should follow the following format.
 
@@ -110,15 +118,6 @@ The input graph  should follow the following format.
 (2) The first line includes 3 non-neigtive integers, e.g., 3 1 2, that denote the number of vertices, the id of the first vertex in the right side and the number of edges, respectively. To illustrate, consider the first line 3 2 1. The input graph has three vertices {0, 1, 2}, and two edges (0, 1) and (0, 2). {0} denotes the left side and {1,2} denotes the right sie.
 
 (3) The following lines represent an adjacent list of the input graph. To illustrate, consider the second line 0 1 2. The vertex with id 0 is adjacent with two vertices 1 and 2.
-
-## Output Format
-By default, FastBB returns the MaxBP and the corresponding running time.
-
-    Running Time: 1ms
-    |E|: 11  |L|: 3  |R|: 4
-    L: 0 2 1
-    R: 4 5 6 7
-
 
 # Future work
 In the future, we shall try to further improve reproducibility of this work.
