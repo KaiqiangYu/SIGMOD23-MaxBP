@@ -43,7 +43,7 @@ g++ ../main.cpp -O3 -o FastBB
 ```shell
 mkdir build
 cd build
-camke ..
+cmake ..
 make
 ```
 
