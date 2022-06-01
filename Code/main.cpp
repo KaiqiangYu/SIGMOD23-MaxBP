@@ -5,9 +5,9 @@
 #include<vector>
 #include<cstring>
 #include "args.hxx"
-#include"Util.cpp"
+#include"Util.h"
 #include"Framework.h"
-#include"Corepruning.cpp"
+#include"Corepruning.h"
 
 #define FILELEN 1024
 
@@ -94,7 +94,7 @@ int main(int argc, char** argv) {
     time_t s1 = clock();
     bkmb.PBIE();
     time_t s2 = clock();
-    cout<<"Running Time: "<<(double)(s2-s1)<<"ms"<<endl;
+    cout<<"Running Time: "<<((double)(s2-s1)/CLOCKS_PER_SEC)<<" sec"<<endl;
     // cout<<bkmb.MaxBP<<endl;
     while(!bkmb.res_top_k.empty()){
         subgraph g=bkmb.res_top_k.top();

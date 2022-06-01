@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include <queue>
 #include"FastBB.h"
 using namespace std;
 
