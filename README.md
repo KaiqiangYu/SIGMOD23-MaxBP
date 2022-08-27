@@ -12,7 +12,6 @@ Our code, data and additional materials are avaliable here.
 |  |   |- cities.g
 |  |   |- writer.g
 |  | ...
-|- SIGMOD-MaxBP-report.pdf (technical report)
 ```
 
 
