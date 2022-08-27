@@ -118,15 +118,3 @@ By default, FastBB returns the MaxBP and the corresponding running time.
     L: 0 2 1
     R: 4 5 6 7
 
-
-# Future work
-In the future, we shall try to further improve reproducibility of this work.
-
-(1) Use ReproZip to simplify the reproducibility process.
-
-(2) Rebuild the source code and provide the general frameworks, e.g., Sym-BK, PB, IE, PBIE, in the form of a library.
-
-(3) Provide more datasets used in our experiments and the source code to collect and pre-process datasets from the [KONECT](http://konect.cc/networks/ "KONECT") website.
-
-# Acknowledgment
-We thank reviewers of SIGMOD'23 for their valuable suggestions to help us improve reproducibility.
